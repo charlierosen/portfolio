@@ -1,3 +1,4 @@
+import type { Route } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Post } from 'contentlayer/generated';
@@ -16,7 +17,7 @@ export default function BlogCard({ post, priority = false }: BlogCardProps) {
   });
 
   return (
-    <Link href={post.url} className="blog-card">
+    <Link href={post.url as Route} className="blog-card">
       <div className="blog-card__image">
         <Image
           src={coverImage}
