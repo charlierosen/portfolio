@@ -1,9 +1,0 @@
-{
-    "buildCommand": "next build",
-    "outputDirectory": ".next",
-    "functions": {
-    "api/**/*.py": {
-    "runtime": "python3.12"
-    }
-    }
-    }
