@@ -1,0 +1,29 @@
+---
+title: Agent Supervisor (agent-eval)
+date: 2025-06-01
+summary: A dual-agent framework for safer autonomous AI, built at an Entrepreneur First hackathon.
+repo: https://github.com/matthewzahra/agent-eval
+---
+
+Built at an Entrepreneur First Hackathon as a proof of concept for safer autonomous agents.
+
+## The Problem
+
+AI agents show tremendous potential but pose real risks — from innocent mistakes to malicious prompt injections. The current options are limiting: avoid critical tasks entirely, require constant human oversight, or accept the risk of errors in sensitive applications.
+
+## The Solution
+
+Agent-eval implements a dual-agent architecture where an **Action Agent** proposes file operations (open, write, delete) and an **Evaluation Agent** validates each proposal against the original goal before it executes.
+
+Two key design choices:
+
+- The Evaluation Agent maintains concise context focused on the original objective, preventing the kind of context drift that leads agents astray on long tasks.
+- The system is explicitly designed to defend against **prompt injection attacks** — we tested with files containing malicious JSON-structured injections and demonstrated interception of unauthorized deletions.
+
+## Results
+
+The Evaluation Agent successfully intercepts nearly all prompt injection attempts and prevents premature termination when the Action Agent skips required steps. We demonstrated this with Gemini 2.5 attempting unauthorized file deletions despite explicit constraints.
+
+## Tech Stack
+
+Python, Gemini API, Streamlit

@@ -1,0 +1,47 @@
+---
+title: "Why Momentum Works (And When It Doesn't)"
+date: 2025-02-15
+summary: A look at the evidence behind momentum investing, the behavioural explanations, and the risks that come with it.
+tags: [quant, finance, trading]
+published: true
+image: /images/rose.png
+---
+
+Momentum is one of the most well-documented anomalies in financial markets. The basic idea is simple: stocks that have performed well recently tend to continue performing well, and stocks that have performed poorly tend to keep falling. It sounds too easy to work — but the evidence is surprisingly robust.
+
+## The Evidence
+
+Jegathesh and Titman's 1993 paper is the classic reference. They showed that buying past winners and selling past losers generated significant returns over 3- to 12-month horizons. Since then, momentum has been documented across asset classes (equities, bonds, currencies, commodities), across geographies, and across time periods going back over a century.
+
+It's one of the few factors that even Eugene Fama — the father of efficient markets — has acknowledged as a genuine anomaly. In his words, momentum is the "premier market anomaly."
+
+## Why Does It Persist?
+
+If momentum is so well-known, why hasn't it been arbitraged away? A few explanations:
+
+**Behavioural biases.** Investors tend to underreact to new information. When a company reports strong earnings, the stock price adjusts — but not fully. The remaining adjustment plays out over weeks and months as more investors notice the trend and pile in.
+
+**Disposition effect.** Investors are reluctant to sell winners (locking in gains too early) and reluctant to sell losers (hoping for a recovery). This creates drag on both sides that slows price adjustment.
+
+**Risk-based explanations.** Momentum strategies carry genuine risks. They tend to crash hard during market reversals — the most famous example being the "momentum crash" of 2009, when momentum portfolios lost decades of accumulated gains in a matter of months.
+
+## The Crashes
+
+This is the catch. Momentum strategies are exposed to sharp, sudden reversals — especially after market downturns. When markets crash and then recover, last year's losers suddenly become this year's winners, and momentum portfolios are caught on the wrong side.
+
+Daniel and Moskowitz (2016) showed that momentum crashes are partially predictable: they tend to happen when momentum portfolio volatility is high and recent momentum returns have been negative. This opens the door to "dynamic momentum" strategies that scale exposure based on recent volatility.
+
+## Practical Considerations
+
+If you're implementing a momentum strategy (as I have with my [trading bot](/projects/momentum-trader)), there are a few things to keep in mind:
+
+- **Transaction costs matter.** Momentum strategies require frequent rebalancing, and each trade incurs costs. In high-frequency implementations, these can eat up most of the alpha.
+- **Universe selection.** Momentum works better in large, liquid stocks where transaction costs are lower and short-selling constraints are fewer.
+- **Lookback and holding periods.** The standard academic setup uses 12-month lookback with 1-month skip (to avoid the short-term reversal effect) and holds for 3-6 months. But the optimal parameters vary by market and time period.
+- **Combining with other factors.** Momentum tends to be negatively correlated with value — they complement each other well in a multi-factor portfolio.
+
+## Further Reading
+
+- Jegadeesh, N. and Titman, S. (1993). "Returns to Buying Winners and Selling Losers." *Journal of Finance*.
+- Asness, C., Moskowitz, T., and Pedersen, L. (2013). "Value and Momentum Everywhere." *Journal of Finance*.
+- Daniel, K. and Moskowitz, T. (2016). "Momentum Crashes." *Journal of Financial Economics*.

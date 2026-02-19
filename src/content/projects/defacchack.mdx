@@ -1,0 +1,30 @@
+---
+title: Def/Acc Hackathon — Security Tools
+date: 2025-03-01
+summary: Hackathon entry with an SQL injection honeypot and an AI-powered fact-checking browser extension.
+repo: https://github.com/charlierosen/DefAccHack
+---
+
+Entry for the BlueDot Def/Acc (defensive accelerationism) hackathon. The project contains two security-focused applications in a single monorepo.
+
+## Honeypot Guardrail
+
+A protective layer that detects SQL injection attacks using a combination of ML classification (via Gemini) and regex heuristics. Instead of simply blocking malicious queries, it returns **synthetic data** — making it harder for attackers to tell they've been caught.
+
+- Streamlit-based interface for testing
+- SAFE/BLOCKED decision logic with Gemini AI fallback
+- Intentionally vulnerable query layer for demonstration purposes
+
+## Fact Checker
+
+A Chrome browser extension paired with a FastAPI backend that validates claims in real time. Highlight text on any page, and the extension will search for evidence and return a verdict.
+
+- Extracts claims from highlighted text or scans entire pages
+- Generates search queries via Gemini and retrieves web evidence
+- Colour-coded results: red (false), amber (uncertain), blue (mixed), green (verified)
+- Source visualisation graphs showing evidence chains
+- Budget-aware API processing for page-wide scans
+
+## Tech Stack
+
+Python, JavaScript, Streamlit, FastAPI, Gemini API, Chrome Extension APIs

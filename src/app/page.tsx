@@ -13,14 +13,18 @@ export default function Home() {
       <section className="hero">
         <h1>Hi, I&apos;m Charlie.</h1>
         <p>
-          Hello!
+          Software engineer at Orbis Investments, with a 1st class MPhys in Physics from
+          the University of Oxford. I work across the full stack (C#/.NET, React/TypeScript,
+          Python) and have a particular interest in quantitative finance, machine learning,
+          and astrophysics research. Currently building data pipelines, internal tooling,
+          and exploring momentum-based trading strategies on the side.
         </p>
         <div className="hero-media">
           <Image
-            src="/images/me.jpg"
-            alt="Your Name"
-            width={160}
-            height={160}
+            src="/images/rose.png"
+            alt="Charlie Rosen"
+            width={100}
+            height={100}
             priority
             className="hero-avatar"
           />
@@ -45,23 +49,18 @@ export default function Home() {
           >
             GitHub
           </a>
-          <Link className="cta secondary" href="/projects">
-            Projects
-          </Link>
+          <a className="cta secondary" href="mailto:charlierosen29@gmail.com">
+            Email
+          </a>
         </div>
       </section>
 
       <section>
-        <p className="home-section-title">Latest writing</p>
+        <p className="home-section-title">Writing</p>
         <div className="blog-grid">
           {posts.map((post, index) => (
-            <BlogCard key={post._id} post={post} priority={index < 2} />
+            <BlogCard key={post._id} post={post} priority={index < 3} />
           ))}
-        </div>
-        <div style={{ marginTop: '2rem' }}>
-          <Link className="cta secondary" href="/blog">
-            Browse all posts →
-          </Link>
         </div>
       </section>
     </div>

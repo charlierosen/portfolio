@@ -1,51 +1,41 @@
 # Portfolio
 
-A React (Next.js) portfolio with a blog powered by Contentlayer + MDX.
+Personal portfolio site built with Next.js, MDX, and Contentlayer.
 
-## Getting Started
+## Running locally
 
 ```bash
+# Install dependencies
 npm install
+
+# Start the dev server
 npm run dev
 ```
 
-Visit `http://localhost:3000` to view the site locally.
+The site will be available at [http://localhost:3000](http://localhost:3000).
 
-## Writing Blog Posts
+## Other commands
 
-1. Add a new `.mdx` file to `src/content/blog`.
-2. Include frontmatter with at least `title`, `date`, and `image`:
+```bash
+# Production build
+npm run build
 
-    ```mdx
-    ---
-    title: Building a Design System
-    date: 2025-01-12
-    summary: Notes on setting up tokens, components, and documentation.
-    image: /images/design-system.svg
-    tags: [design, react]
-    published: true
-    ---
-    ```
+# Start production server
+npm start
 
-3. Place accompanying images under `public/images/`. Local paths (e.g. `/images/example.svg`) are served automatically.
-4. Run `npm run dev` to regenerate Contentlayer types and see the new post.
+# Lint
+npm run lint
+```
 
-Set `published: false` to draft the post without surfacing it in listings.
+## Adding content
 
-## Pages
+- **Blog posts**: Add `.mdx` files to `src/content/blog/`. Include frontmatter with `title`, `date`, and optionally `summary`, `image`, `tags`, and `published`.
+- **Projects**: Add `.mdx` files to `src/content/projects/`. Include frontmatter with `title`, `date`, and optionally `summary` and `repo`.
+- **CV**: Replace `public/cv.pdf` with your latest CV.
+- **Images**: Place images in `public/images/` and reference them as `/images/filename.png`.
 
-- `/` – Hero introduction plus two-column blog grid.
-- `/blog` – Full blog index with cards.
-- `/blog/[slug]` – Individual MDX post with hero image.
-- `/cv` – Link placeholder for your résumé (`public/cv.pdf`).
-- `/projects` – Projects listing seeded via MDX.
+Set `published: false` in blog post frontmatter to draft without publishing.
 
 ## Deployment
 
-Deploy for free on:
-
-1. [Vercel](https://vercel.com/) – zero-config for Next.js, Contentlayer builds work out-of-the-box.
-2. [Netlify](https://www.netlify.com/) – use the Next.js adapter; free tier includes build minutes and CDN.
-3. [Cloudflare Pages](https://pages.cloudflare.com/) – deploy static output via `next-on-pages` or opt into their full-stack Next.js (beta) runtime.
-
-Each service connects directly to GitHub and redeploys on push. For Contentlayer, ensure the `public/` images and `src/content` directory are committed so they are available during builds.
+Deployed on Vercel. Pushes to `main` trigger automatic redeployment.

@@ -1,0 +1,34 @@
+---
+title: Momentum Trading Bot
+date: 2024-09-11
+summary: Automated NASDAQ-100 momentum strategy with cascading timeframe filters. +15.6% return in paper trading.
+repo: https://github.com/charlierosen/momentum_trader
+---
+
+An automated trading bot that trades NASDAQ-100 stocks using a momentum filtering strategy with performance-weighted position sizing.
+
+## Strategy
+
+The bot applies a cascading filter across multiple timeframes:
+
+1. Select the **50 best-performing** stocks over 12 months
+2. Narrow to the **30 best** over 6 months
+3. Pick the **top 10** over 3 months
+
+The portfolio rebalances at each refresh cycle, with position sizes weighted by recent performance. The idea is that momentum tends to persist over medium-term horizons — stocks that have been rising are more likely to continue rising.
+
+## Implementation
+
+- Connects to the **Alpaca** trading API for order execution
+- Uses **yfinance** for historical price data
+- Supports multiple scheduling modes: 10-minute, daily, and weekly rebalancing
+- Performance tracked via a minimalist **Flask** dashboard
+- Deployed on an **AWS EC2** instance for always-on operation
+
+## Results
+
+Achieved a **+15.6% return** over the period 17/09 – 27/12/2024 in a simplified paper trading environment.
+
+## Tech Stack
+
+Python, Alpaca API, yfinance, SQLite, Flask, AWS EC2

@@ -1,0 +1,28 @@
+---
+title: E-INSPIRE II — Relic Galaxy Research
+date: 2024-06-01
+summary: ML-based analysis of galaxy evolution using DESI and SDSS spectroscopic data. Co-authored published paper.
+repo: https://github.com/charlierosen/AS01_E_INSPIRE
+---
+
+Ongoing astrophysics research with the (E-)INSPIRE group, investigating galaxy evolution through primordial relic galaxies.
+
+## What Are Relic Galaxies?
+
+Relic galaxies are massive galaxies that formed most of their stars very early in the universe's history and have remained largely unchanged since. They offer a direct window into conditions in the early universe — studying them helps us understand how galaxies form and evolve.
+
+## Approach
+
+The project uses the E-INSPIRE I master catalogue and data from the DESI and SDSS surveys. The analysis pipeline involves:
+
+1. **ML Regression** — predicting the Degree of Relicness (DoR) for candidate galaxies using a variety of regression methods.
+2. **Spectral Stacking** — clustering galaxies and stacking their spectra to create high signal-to-noise composites.
+3. **Spectral Fitting** — fitting stacked spectra using pPXF (penalised pixel-fitting) to derive stellar population properties like age, metallicity, and star formation history.
+
+## Publications
+
+Co-authored 1 published paper, with a first-author paper and another co-authored paper currently in development.
+
+## Tech Stack
+
+Python, scikit-learn, astropy, pPXF, Jupyter

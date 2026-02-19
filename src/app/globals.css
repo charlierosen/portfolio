@@ -11,8 +11,8 @@ html, body {
   min-height: 100%;
 }
 
-.hero { grid-template-columns: auto
-  200px; align-items:center; }
+
+.hero { grid-template-columns: 1fr 500px; align-items: center; }
 
 .hero-avatar { border-radius: 999px; }
 
@@ -142,7 +142,7 @@ footer {
 .blog-grid {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .blog-card {
@@ -282,5 +282,9 @@ article p {
   .hero-actions .cta {
     flex: 1 0 auto;
     justify-content: center;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
   }
 }

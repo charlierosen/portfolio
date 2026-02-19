@@ -1,15 +1,23 @@
 import type { Route } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import type { Post } from 'contentlayer/generated';
+
+type CardItem = {
+  url: string;
+  title: string;
+  date: string;
+  summary?: string;
+  image?: string;
+  _id: string;
+};
 
 type BlogCardProps = {
-  post: Post;
+  post: CardItem;
   priority?: boolean;
 };
 
 export default function BlogCard({ post, priority = false }: BlogCardProps) {
-  const coverImage = post.image ?? '/images/placeholder.svg';
+  const coverImage = post.image ?? '/images/rose.png';
   const formattedDate = new Date(post.date).toLocaleDateString(undefined, {
     year: 'numeric',
     month: 'short',
